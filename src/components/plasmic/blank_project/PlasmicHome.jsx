@@ -12,12 +12,15 @@ import * as React from "react";
 import {
   classNames,
   createPlasmicElementProxy,
-  deriveRenderOpts
+  deriveRenderOpts,
+  ensureGlobalVariants
 } from "@plasmicapp/react-web";
+import { useScreenVariants } from "./PlasmicGlobalVariant__Screen"; // plasmic-import: HBT3Um4xFJ/globalVariant
 import "@plasmicapp/react-web/lib/plasmic.css";
 import * as defaultcss from "../plasmic__default_style.module.css"; // plasmic-import: global/defaultcss
 import * as projectcss from "./plasmic_blank_project.module.css"; // plasmic-import: v2ovbRJGsEFmRX1j8f3Jsa/projectcss
 import * as sty from "./PlasmicHome.module.css"; // plasmic-import: yQ0djKSUNO/css
+import GoogleIconIcon from "../gamer_groups/icons/PlasmicIcon__GoogleIcon"; // plasmic-import: LIzhrbm1R/icon
 
 export const PlasmicHome__VariantProps = new Array();
 
@@ -25,6 +28,10 @@ export const PlasmicHome__ArgProps = new Array();
 
 function PlasmicHome__RenderFunc(props) {
   const { variants, args, overrides, forNode, dataFetches } = props;
+  const globalVariants = ensureGlobalVariants({
+    screen: useScreenVariants()
+  });
+
   return (
     <React.Fragment>
       <div className={defaultcss.plasmic_page_wrapper}>
@@ -39,17 +46,166 @@ function PlasmicHome__RenderFunc(props) {
             sty.root
           )}
         >
-          <div
-            className={classNames(
-              defaultcss.all,
-              defaultcss.__wab_text,
-              sty.freeBox__ntum1
-            )}
-          >
-            {"Enter some text"}
-          </div>
+          <div className={classNames(defaultcss.all, sty.freeBox__hspjS)}>
+            <div className={classNames(defaultcss.all, sty.freeBox__nN0Gp)}>
+              <div className={classNames(defaultcss.all, sty.freeBox__h7IMg)}>
+                <span
+                  className={classNames(
+                    defaultcss.span,
+                    defaultcss.__wab_text,
+                    sty.span___5Ysnw
+                  )}
+                >
+                  {"Gamer"}
+                </span>
 
-          <div className={classNames(defaultcss.all, sty.freeBox__itfE0)} />
+                <span
+                  className={classNames(
+                    defaultcss.span,
+                    defaultcss.__wab_text,
+                    sty.span___10QhE
+                  )}
+                >
+                  {"Groups"}
+                </span>
+
+                <div
+                  className={classNames(defaultcss.all, sty.freeBox___0FVhh)}
+                >
+                  <span
+                    className={classNames(
+                      defaultcss.span,
+                      defaultcss.__wab_text,
+                      sty.span__oXhwV
+                    )}
+                  >
+                    {"Find a"}
+                  </span>
+
+                  <span
+                    className={classNames(
+                      defaultcss.span,
+                      defaultcss.__wab_text,
+                      sty.span__ii4H0
+                    )}
+                  >
+                    {" team"}
+                  </span>
+
+                  <span
+                    className={classNames(
+                      defaultcss.span,
+                      defaultcss.__wab_text,
+                      sty.span__xsy57
+                    )}
+                  >
+                    {", more like "}
+                  </span>
+
+                  <span
+                    className={classNames(
+                      defaultcss.span,
+                      defaultcss.__wab_text,
+                      sty.span___1JcKk
+                    )}
+                  >
+                    {"you"}
+                  </span>
+
+                  <span
+                    className={classNames(
+                      defaultcss.span,
+                      defaultcss.__wab_text,
+                      sty.span__nPn9L
+                    )}
+                  >
+                    {"."}
+                  </span>
+                </div>
+              </div>
+
+              <div className={classNames(defaultcss.all, sty.freeBox__ofkCa)}>
+                <div className={classNames(defaultcss.all, sty.freeBox__luc3N)}>
+                  <div
+                    className={classNames(defaultcss.all, sty.freeBox__s3MCi)}
+                  >
+                    <input
+                      className={classNames(
+                        defaultcss.input,
+                        sty.textbox___2UsBr
+                      )}
+                      placeholder={"EMAIL"}
+                      size={1}
+                      type={"text"}
+                      value={""}
+                    />
+
+                    <input
+                      className={classNames(
+                        defaultcss.input,
+                        sty.textbox__hFFwf
+                      )}
+                      placeholder={"VERIFY EMAIL"}
+                      size={1}
+                      type={"text"}
+                      value={""}
+                    />
+
+                    <input
+                      className={classNames(
+                        defaultcss.input,
+                        sty.textbox___1TvzJ
+                      )}
+                      placeholder={"USERNAME"}
+                      size={1}
+                      type={"text"}
+                      value={""}
+                    />
+
+                    <input
+                      className={classNames(
+                        defaultcss.input,
+                        sty.textbox___2LTq9
+                      )}
+                      placeholder={"PASSWORD"}
+                      size={1}
+                      type={"text"}
+                      value={""}
+                    />
+
+                    <button
+                      className={classNames(
+                        defaultcss.button,
+                        defaultcss.__wab_text,
+                        sty.button__jjDJ
+                      )}
+                    >
+                      {"REGISTER"}
+                    </button>
+                  </div>
+                </div>
+
+                <div className={classNames(defaultcss.all, sty.freeBox__d0Foe)}>
+                  <GoogleIconIcon
+                    data-plasmic-name={"svg"}
+                    data-plasmic-override={overrides.svg}
+                    className={classNames(defaultcss.all, sty.svg)}
+                    role={"img"}
+                  />
+
+                  <button
+                    className={classNames(
+                      defaultcss.button,
+                      defaultcss.__wab_text,
+                      sty.button__zsUt7
+                    )}
+                  >
+                    {"Sign in with Google"}
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </React.Fragment>
@@ -57,7 +213,8 @@ function PlasmicHome__RenderFunc(props) {
 }
 
 const PlasmicDescendants = {
-  root: ["root"]
+  root: ["root", "svg"],
+  svg: ["svg"]
 };
 
 function makeNodeComponent(nodeName) {
@@ -91,6 +248,7 @@ export const PlasmicHome = Object.assign(
   makeNodeComponent("root"),
   {
     // Helper components rendering sub-elements
+    svg: makeNodeComponent("svg"),
     // Metadata about props expected for PlasmicHome
     internalVariantProps: PlasmicHome__VariantProps,
     internalArgProps: PlasmicHome__ArgProps

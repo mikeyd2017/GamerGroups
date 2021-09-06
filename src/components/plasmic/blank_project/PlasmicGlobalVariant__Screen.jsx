@@ -23,6 +23,8 @@ export function ScreenVariantProvider(props) {
 
 export const useScreenVariants = p.createUseScreenVariants(true, {
   mobileOnly: "(min-width:0px) and (max-width:768px)",
+  tablet: "(max-width:1024px)",
+  desktop: "(max-width:1920px)",
 });
 
 export default ScreenContext;
